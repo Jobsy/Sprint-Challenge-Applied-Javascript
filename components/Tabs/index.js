@@ -11,7 +11,7 @@
 
 axios.get('https://lambda-times-backend.herokuapp.com/topics')
     .then(function (response) {
-        console.log(response.data.topics);
+        // console.log(response.data.topics);
         response.data.topics.map(function (ele) {
             // console.log(ele)
             return Tab(ele)
