@@ -12,9 +12,9 @@
 axios.get('https://lambda-times-backend.herokuapp.com/topics')
     .then(function (response) {
         console.log(response.data.topics);
-        return response.data.topics.map(function (ele) {
-            console.log(ele)
-            Tab(ele)
+        response.data.topics.map(function (ele) {
+            // console.log(ele)
+            return Tab(ele)
         })
     })
     .catch(function (error) {
@@ -24,7 +24,7 @@ axios.get('https://lambda-times-backend.herokuapp.com/topics')
 function Tab(topics) {
     // debugger
     const div = document.createElement("div");
-    div.textContent = topics.topics;
+    div.textContent = topics;
     div.classList.add("tab");
 
     const topicsComponentAdder = document.querySelector(".topics");
