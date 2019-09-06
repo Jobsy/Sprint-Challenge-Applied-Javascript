@@ -18,21 +18,38 @@
 //
 // Create a card for each of the articles and add the card to the DOM.
 
+// const arr = []
+
 axios.get('https://lambda-times-backend.herokuapp.com/articles')
     .then(function (response) {
-        console.log(response);
+        // console.log(response);
         console.log(response.data.articles);
-        // response.data.topics.map(function (ele) {
-        //     // console.log(ele)
-        //     return Tab(ele)
-        // })
+        const arr = []
+        for(keys in response.data.articles) {
+            arr.push(response.data.articles[keys])
+        }
+        //  console.log(arr)      
+        arr.map(function (ele) {
+            // console.log(ele)
+            return eachDataArr(ele)
+            // return Tab(ele)
+        })
     })
     .catch(function (error) {
         console.log(error);
     })
     
+function eachDataArr(dataArr){
+    // console.log(dataArr)
+    dataArr.map(function(ele){
+        // console.log(ele)
+        ArticleCards(ele)
+    })
+
+}
+
     
-function ArticleCards() {
+function ArticleCards(datas) {
     // debugger
     const div1 = document.createElement("div");
     const div2 = document.createElement("div");
@@ -41,9 +58,9 @@ function ArticleCards() {
     const img = document.createElement("img");
     const span = document.createElement("span");
 
-    // span1.textContent = "SMARCH 28, 2019";
-    // span2.textContent = "98°";
-    // h1.textContent = "Lambda Times";
+    div2.textContent = datas.headline;
+    img.src = datas.authorPhoto;
+    span.textContent = datas.authorName;
 
     div1.classList.add("card");
     div2.classList.add("headline");
