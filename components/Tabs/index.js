@@ -10,11 +10,21 @@
 
 
 axios.get('https://lambda-times-backend.herokuapp.com/topics')
-  .then(function (response) {
-    // handle success
-    console.log(response);
-  })
-  .catch(function (error) {
-    // handle error
-    console.log(error);
-  })
+    .then(function (response) {
+        
+        })
+    })
+    .catch(function (error) {
+        console.log(error);
+    })
+
+function Tab(topics) {
+    debugger
+    const div = document.createElement("div");
+    div.textContent = topics.topics;
+
+    const topicsComponentAdder = document.querySelector(".topics");
+    topicsComponentAdder.appendChild(div);
+
+    return topicsComponentAdder;
+}
