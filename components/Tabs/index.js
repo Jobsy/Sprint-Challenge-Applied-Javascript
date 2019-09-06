@@ -22,9 +22,10 @@ axios.get('https://lambda-times-backend.herokuapp.com/topics')
     })
 
 function Tab(topics) {
-    debugger
+    // debugger
     const div = document.createElement("div");
     div.textContent = topics.topics;
+    div.classList.add("tab");
 
     const topicsComponentAdder = document.querySelector(".topics");
     topicsComponentAdder.appendChild(div);
