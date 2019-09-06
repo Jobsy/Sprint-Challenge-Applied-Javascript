@@ -32,29 +32,32 @@ axios.get('https://lambda-times-backend.herokuapp.com/articles')
     })
     
     
-// function ArticleCards() {
-//     // debugger
-//     const div1 = document.createElement("div");
-//     const div2 = document.createElement("div");
-//     const div3 = document.createElement("div");
-//     const div4 = document.createElement("div");
-//     const img = document.createElement("img");
-//     const span = document.createElement("span");
+function ArticleCards() {
+    // debugger
+    const div1 = document.createElement("div");
+    const div2 = document.createElement("div");
+    const div3 = document.createElement("div");
+    const div4 = document.createElement("div");
+    const img = document.createElement("img");
+    const span = document.createElement("span");
 
-//     // span1.textContent = "SMARCH 28, 2019";
-//     // span2.textContent = "98°";
-//     // h1.textContent = "Lambda Times";
+    // span1.textContent = "SMARCH 28, 2019";
+    // span2.textContent = "98°";
+    // h1.textContent = "Lambda Times";
 
-//     // div.classList.add("header");
-//     // span1.classList.add("date");
-//     // span2.classList.add("temp");
+    div1.classList.add("card");
+    div2.classList.add("headline");
+    div3.classList.add("author");
+    div4.classList.add("img-container");
+    
+    div1.appendChild(div2);
+    div1.appendChild(div3);
+    div3.appendChild(div4);
+    div4.appendChild(img);
+    div3.appendChild(span);
 
-//     // div.appendChild(span1);
-//     // div.appendChild(h1);
-//     // div.appendChild(span2);
+    const articleCardsComponentAdder = document.querySelector(".cards-container");
+    articleCardsComponentAdder.appendChild(div1);
 
-//     // const headerComponentAdder = document.querySelector(".header-container");
-//     // headerComponentAdder.appendChild(div);
-
-//     // return headerComponentAdder;
-// }
+    return articleCardsComponentAdder;
+}
