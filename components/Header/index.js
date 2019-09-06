@@ -10,6 +10,7 @@
 // And add it to the DOM in the .headerContainer component
 
 function Header() {
+    // debugger
     const div = document.createElement("div");
     const span1 = document.createElement("span");
     const span2 = document.createElement("span");
@@ -27,5 +28,9 @@ function Header() {
     div.appendChild(h1);
     div.appendChild(span2);
 
-    // const componentAdder = document.querySelector(".cards");
+    const componentAdder = document.querySelector(".headerContainer");
+    componentAdder.appendChild(div);
+
+    return componentAdder;
 }
+
